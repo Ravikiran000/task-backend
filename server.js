@@ -8,7 +8,7 @@ const cloudinary = require('cloudinary');
 
 dotenv.config();
 const port = process.env.PORT;
-
+const host = '0.0.0.0';
 
 ////////------ cloudinary -------//////////
 cloudinary.config({
@@ -45,6 +45,6 @@ app.post("/", (req, res) => {
     res.status("200").send(req.body)
 })
 
-app.listen(port, () => {
-    console.log(`listening at port ${port}`)
+app.listen(port, host, () => {
+    console.log(Server running on http://${host}:${port});
 })
